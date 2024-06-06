@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
-"""
-Type-annotated function element_length which takes a list mxd_lst
-of integers and floats and returns their sum as a float.
-"""
-from typing import List, Union
+"""Type-annotated function element_length"""
+from typing import Iterable, List, Sequence, Tuple
 
 
-def element_length(lst: List[Union[int, float]]) -> List[int]:
-    """Return list of integers representing lengths of elements."""
-    return [len(str(i)) for i in lst]
+def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
+    """Returns a list of tuples of sequence and int"""
+    return [(i, len(i)) for i in lst]
